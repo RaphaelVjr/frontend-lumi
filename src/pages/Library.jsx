@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 const Library = () => {
   const [faturas, setFaturas] = useState([])
 
-  const baseUrl = "https://backend-lumi.vercel.app/";
+  const baseUrl = "https://backend-lumi.vercel.app";
 
   const fetchFaturas = async () => {
     try {
