@@ -18,7 +18,7 @@ const Dashboard = () => {
   const [monetaryData, setMonetaryData] = useState([])
   const [clientNumbers, setClientNumbers] = useState([]);
 
-  const baseUrl = "https://backend-lumi.vercel.app/";
+  const baseUrl = "https://backend-lumi.vercel.app";
 
   useEffect(() => {
     const fetchFaturas = async () => {
