@@ -18,10 +18,12 @@ const Dashboard = () => {
   const [monetaryData, setMonetaryData] = useState([])
   const [clientNumbers, setClientNumbers] = useState([]);
 
+  const baseUrl = "https://backend-lumi.vercel.app/";
+
   useEffect(() => {
     const fetchFaturas = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/faturas")
+        const response = await axios.get(`${baseUrl}/faturas`)
         setFaturas(response.data)
         const uniqueClientNumbers = [...new Set(response.data.map(fatura => fatura.numero_cliente))]
         setClientNumbers(uniqueClientNumbers)

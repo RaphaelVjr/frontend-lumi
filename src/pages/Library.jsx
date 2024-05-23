@@ -6,9 +6,11 @@ import { motion } from "framer-motion"
 const Library = () => {
   const [faturas, setFaturas] = useState([])
 
+  const baseUrl = "https://backend-lumi.vercel.app/";
+
   const fetchFaturas = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/faturas")
+      const response = await axios.get(`${baseUrl}/faturas`)
       setFaturas(response.data)
     } catch (error) {
       console.error("Error fetching faturas:", error)
@@ -23,7 +25,7 @@ const Library = () => {
     if (numeroCliente) {
       try {
         const response = await axios.get(
-          `http://localhost:3000/faturas/cliente/${numeroCliente}`
+          `${baseUrl}/faturas/cliente/${numeroCliente}`
         )
         setFaturas(response.data)
       } catch (error) {
