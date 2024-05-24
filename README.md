@@ -37,7 +37,7 @@ Variáveis a serem exibidas:
 
 
 ## Instalação :hammer_and_wrench:
-Siga todos os passos para rodar o projeto localmente, também cheque o repositório da ![](API Backend)
+Siga todos os passos para rodar o projeto localmente, também cheque o repositório da ![https://github.com/RaphaelVjr/backend-lumi](API Backend)
 
 #### Passo 1 - Pré Requisitos:
 
@@ -46,7 +46,7 @@ Siga todos os passos para rodar o projeto localmente, também cheque o repositó
 - **NPM ou YARN**
 
 ```bash
-  git clone https://github.com/RaphaelVjr/backend-lumi.git
+  git clone https://github.com/RaphaelVjr/frontend-lumi.git
 ```
 
 Entre no diretório do projeto
@@ -58,7 +58,7 @@ npm install
 
 ## Features futuras :rocket:
 
-- Autenticação JWT
+- Login
 
 
 ## Rodando Testes :traffic_light:
@@ -70,11 +70,6 @@ Para rodar os testes utilizando o o mocha basta digitar no terminal:
 ```
 Testes foram feitos utilizando Vitest.
 
-
-## Adicionais do projeto
-
-- :rotating_light: Watchdog python script para observar a entrada de arquivos importados e triggar o scrapper para ler o arquivo PDF novo e adicioná-lo ao banco.
-- Rota para importar os arquivos PDF e salvá-los.
 
 ## Deploy
 
