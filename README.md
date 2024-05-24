@@ -37,7 +37,7 @@ Variáveis a serem exibidas:
 
 
 ## Instalação :hammer_and_wrench:
-Siga todos os passos para rodar o projeto localmente, também cheque o repositório da ![https://github.com/RaphaelVjr/backend-lumi](API Backend)
+Siga todos os passos para rodar o projeto localmente, também clone e siga os passos do repositório da API Backend https://github.com/RaphaelVjr/backend-lumi
 
 #### Passo 1 - Pré Requisitos:
 
