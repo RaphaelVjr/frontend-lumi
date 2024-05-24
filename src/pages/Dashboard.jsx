@@ -99,6 +99,7 @@ const Dashboard = () => {
                 width={600}
                 height={300}
                 data={energyData}
+                data-testid="chart-data"
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
@@ -125,6 +126,7 @@ const Dashboard = () => {
                 width={600}
                 height={300}
                 data={monetaryData}
+                data-testid="chart-data"
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
