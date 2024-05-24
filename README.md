@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![https://lumi-teste.netlify.app/](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 ![https://www.linkedin.com/in/raphaelvitorio/](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
 
 ![Stars](https://img.shields.io/github/stars/{username}/{repo-name}.svg)
