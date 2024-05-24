@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import { Dialog, Popover, Transition,DialogPanel, PopoverGroup } from '@headlessui/react'
+import { Link } from 'react-router-dom';
 import {
   Bars3Icon,
   XMarkIcon,
@@ -43,15 +44,15 @@ export default function Example() {
             </Transition>
           </Popover>
 
-          <a href="#" className="text-lg font-semibold leading-6">
+          <Link to="/" className="text-lg font-semibold leading-6">
             Dashboard
-          </a>
-          <a href="#" className="text-lg font-semibold leading-6">
+          </Link>
+          <Link to="/library" className="text-lg font-semibold leading-6">
             Faturas
-          </a>
-          <a href="#" className="text-lg font-semibold leading-6">
+          </Link>
+          <Link to="" className="text-lg font-semibold leading-6">
             Empresa
-          </a>
+          </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-xl font-semibold leading-6">
