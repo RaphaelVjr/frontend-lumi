@@ -1,5 +1,9 @@
+![https://lumi-teste.netlify.app/](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+![https://www.linkedin.com/in/raphaelvitorio/](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
 
-# Extração e Exibição de dados de Fatura de Luz
+![Stars](https://img.shields.io/github/stars/{username}/{repo-name}.svg)
+
+# Extração e Exibição de dados de Fatura de Luz :zap:
 
 Projeto designado a extrair dados dos extratos das faturas de luz, organizá-los e aplicar regras para exibição dos mesmos em gráficos onde podemos distinguir a comparação dos valores.
 
@@ -22,151 +26,54 @@ Variáveis a serem exibidas:
 
 
 
-## Tecnologias Utilizadas
-
-Dillinger uses a number of open source projects to work properly:
-
-- [AngularJS] - HTML enhanced for web apps!
-- [Ace Editor] - awesome web-based text editor
-- [markdown-it] - Markdown parser done right. Fast and easy to extend.
-- [Twitter Bootstrap] - great UI boilerplate for modern web apps
-- [node.js] - evented I/O for the backend
-- [Express] - fast node.js network app framework [@tjholowaychuk]
-- [Gulp] - the streaming build system
-- [Breakdance](https://breakdance.github.io/breakdance/) - HTML
-to Markdown converter
-- [jQuery] - duh
-
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
-## Installation
-
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
-
-Install the dependencies and devDependencies and start the server.
-
-```sh
-cd dillinger
-npm i
-node app
-```
-
-For production environments...
-
-```sh
-npm install --production
-NODE_ENV=production node app
-```
-## Development
-
-Want to contribute? Great!
-
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantaneously see your updates!
-
-Open your favorite Terminal and run these commands.
-
-First Tab:
-
-```sh
-node app
-```
-
-Second Tab:
-
-```sh
-gulp watch
-```
-
-(optional) Third:
-
-```sh
-karma test
-```
-
-## API Documentation
-
-All the routes and their methods.
-
-```http
-  post '/submit_ratings', to: 'ratings#submit'
-  get '/users', to: 'users#index'
-  post '/movies', to: 'movies#create'
-  post '/users',   to: 'users#create'
-  post 'import_movies', to: 'movies#import'  
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
-```
+## Tecnologias Utilizadas 💻
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) 
+![Vite](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Recharts](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Framer](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)
+![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 
 
+## Instalação :hammer_and_wrench:
+Siga todos os passos para rodar o projeto localmente, também clone e siga os passos do repositório da API Backend https://github.com/RaphaelVjr/backend-lumi
 
-## Running Tests
+#### Passo 1 - Pré Requisitos:
 
-To run tests in the repository using Rspec you need to:
+- **Postgres 16**
+- **Node**
+- **NPM ou YARN**
 
 ```bash
-  bundle exec rspec
-```
-
-
-## Stacks
-
-**Front-end ([Repo]):** [React], [Kendo UI] (Click to know more).
-
-**Back-end:** [Ruby On Rails], [Redis] and [Sidekiq] (Click to know more).
-
-
-
-
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
-   [React]: <https://nodejs.org/en>
-   [Kendo UI]: <https://www.telerik.com/kendo-react-ui/components/getting-started/>
-   [Repo]: <https://github.com/RaphaelVjr/Frontend-React-Challenge>
-   [Ruby On Rails]: <https://rubyonrails.org/>
-   [Redis]: <https://redis.io/docs/install/install-redis/>
-   [Sidekiq]: <https://github.com/sidekiq/sidekiq/wiki/Getting-Started>
-
-## Kendo License
-
-[Kendo UI](https://choosealicense.com/licenses/mit/)
-
-
-## Rodando localmente
-
-Clone o projeto
-
-```bash
-  git clone https://link-para-o-projeto
+  git clone https://github.com/RaphaelVjr/frontend-lumi.git
 ```
 
 Entre no diretório do projeto
 
+Instale as dependências! Dentro da pasta do projeto execute: 
+```sh
+npm install
+```
+
+## Features futuras :rocket:
+
+- Login
+
+
+## Rodando Testes :traffic_light:
+
+Para rodar os testes utilizando o o mocha basta digitar no terminal:
+
 ```bash
-  cd my-project
+  npm run test
 ```
-
-Instale as dependências
-
-```bash
-  npm install
-```
-
-Inicie o servidor
-
-```bash
-  npm run start
-```
+Testes foram feitos utilizando Vitest.
 
 
-## Uso/Exemplos
+## Deploy
 
-```javascript
-import Component from 'my-project'
+Deploy feito na Vercel com o banco PostgreSQL na Vercel também.
 
-function App() {
-  return <Component />
-}
-```
 
+![Love](http://ForTheBadge.com/images/badges/built-with-love.svg)
