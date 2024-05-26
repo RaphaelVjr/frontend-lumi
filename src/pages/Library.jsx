@@ -4,35 +4,35 @@ import { Table } from "antd"
 import { motion } from "framer-motion"
 
 const Library = () => {
-  const [faturas, setFaturas] = useState([])
+  const [invoices, setInvoices] = useState([])
 
   const baseUrl = "https://backend-lumi.vercel.app";
 
-  const fetchFaturas = async () => {
+  const fetchInvoices = async () => {
     try {
-      const response = await axios.get(`${baseUrl}/faturas`)
-      setFaturas(response.data)
+      const response = await axios.get(`${baseUrl}/invoices`)
+      setInvoices(response.data)
     } catch (error) {
-      console.error("Error fetching faturas:", error)
+      console.error("Error fetching Invoices:", error)
     }
   }
 
   useEffect(() => {
-    fetchFaturas()
+    fetchInvoices()
   }, [])
 
-  const searchFaturas = async numeroCliente => {
+  const searchInvoices = async numeroCliente => {
     if (numeroCliente) {
       try {
         const response = await axios.get(
-          `${baseUrl}/faturas/cliente/${numeroCliente}`
+          `${baseUrl}invoices/cliente/${numeroCliente}`
         )
-        setFaturas(response.data)
+        setInvoices(response.data)
       } catch (error) {
         console.error(error)
       }
     } else {
-      fetchFaturas()
+      fetchInvoices()
     }
   }
 
@@ -53,7 +53,7 @@ const Library = () => {
       render: (_, record) => (
         <motion.a
           className="bg-[#0dad62] text-[#12312a] rounded p-2 hover:text-white justify-center align-middle"
-          href={`http://localhost:3000/faturas/download/${record.id}`}
+          href={`http://localhost:3000/invoices/download/${record.id}`}
           download
         >
           Download
@@ -70,16 +70,16 @@ const Library = () => {
   return (
     <main className="w-screen flex">
       <section className="flex flex-col gap-10 p-10 justify-center items-center w-full">
-        <h1 className="text-[#12312a] font-sans font-semibold">Faturas</h1>
+        <h1 className="text-[#12312a] font-sans font-semibold">Invoices</h1>
         <input
           type="text"
           placeholder="Pesquise pelo número do cliente"
-          onChange={e => searchFaturas(e.target.value)}
+          onChange={e => searchInvoices(e.target.value)}
           className="p-2 w-1/2 rounded border-2 border-gray-400"
         />
         <Table
           className="w-full"
-          dataSource={faturas}
+          dataSource={invoices}
           columns={columns}
           pagination={paginationConfig}
         />

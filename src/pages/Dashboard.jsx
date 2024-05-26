@@ -12,7 +12,7 @@ import {
 } from "recharts"
 
 const Dashboard = () => {
-  const [faturas, setFaturas] = useState([])
+  const [Invoices, setInvoices] = useState([])
   const [selectedNumeroCliente, setSelectedNumeroCliente] = useState("")
   const [energyData, setEnergyData] = useState([])
   const [monetaryData, setMonetaryData] = useState([])
@@ -21,52 +21,52 @@ const Dashboard = () => {
   const baseUrl = "https://backend-lumi.vercel.app";
 
   useEffect(() => {
-    const fetchFaturas = async () => {
+    const fetchInvoices = async () => {
       try {
-        const response = await axios.get(`${baseUrl}/faturas`)
-        setFaturas(response.data)
-        const uniqueClientNumbers = [...new Set(response.data.map(fatura => fatura.numero_cliente))]
+        const response = await axios.get(`${baseUrl}/invoices`)
+        setInvoices(response.data)
+        const uniqueClientNumbers = [...new Set(response.data.map(invoice => invoice.numero_cliente))]
         setClientNumbers(uniqueClientNumbers)
 
         processChartData(response.data)
       } catch (error) {
-        console.error("Error fetching faturas:", error)
+        console.error("Error fetching Invoices:", error)
       }
     }
-    fetchFaturas()
+    fetchInvoices()
   }, [])
 
   useEffect(() => {
-    const filteredFaturas = selectedNumeroCliente
-      ? faturas.filter(
-        fatura => fatura.numero_cliente === selectedNumeroCliente
+    const filteredInvoices = selectedNumeroCliente
+      ? Invoices.filter(
+        invoice => invoice.numero_cliente === selectedNumeroCliente
       )
-      : faturas
-    processChartData(filteredFaturas)
-  }, [selectedNumeroCliente, faturas])
+      : Invoices
+    processChartData(filteredInvoices)
+  }, [selectedNumeroCliente, Invoices])
 
-  const processChartData = faturas => {
+  const processChartData = invoices => {
     if (!selectedNumeroCliente) {
       setEnergyData([{ name: "", Consumo: null, "Energia Compensada": null }])
       setMonetaryData([{ name: "", "Total sem GD": null, "Economia GD": null }])
       return
     }
 
-    const energyChartData = faturas.map(fatura => ({
-      name: fatura.mes_referencia,
+    const energyChartData = Invoices.map(invoice => ({
+      name: invoice.mes_referencia,
       Consumo:
-        fatura.energia_eletrica_quantidade + fatura.energia_scee_quantidade,
-      "Energia Compensada": fatura.energia_compensada_quantidade
+        invoice.energia_eletrica_quantidade + invoice.energia_scee_quantidade,
+      "Energia Compensada": invoice.energia_compensada_quantidade
     }))
 
-    const monetaryChartData = faturas.map(fatura => ({
-      name: fatura.mes_referencia,
+    const monetaryChartData = invoices.map(invoice => ({
+      name: invoice.mes_referencia,
       "Total sem GD": (
-        fatura.energia_eletrica_valor +
-        fatura.energia_scee_valor +
-        fatura.contrib_ilum_publica
+        invoice.energia_eletrica_valor +
+        invoice.energia_scee_valor +
+        invoice.contrib_ilum_publica
       ).toFixed(2),
-      "Economia GD": fatura.energia_compensada_valor
+      "Economia GD": invoice.energia_compensada_valor
     }))
 
     setEnergyData(energyChartData)

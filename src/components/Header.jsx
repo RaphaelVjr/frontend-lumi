@@ -5,9 +5,9 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import lumi from '../../assets/lumi-logo.png'
+import lumi from '../assets/lumi-logo.png'
 
-export default function Example() {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -48,10 +48,10 @@ export default function Example() {
             Dashboard
           </Link>
           <Link to="/library" className="text-lg font-semibold leading-6">
-            Faturas
+            Invoices
           </Link>
           <Link to="" className="text-lg font-semibold leading-6">
-            Empresa
+            Company
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -94,7 +94,7 @@ export default function Example() {
                   href=""
                   className="-mx-3 block rounded-lg px-3 py-2 text-xl font-semibold leading-7 hover:bg-gray-50"
                 >
-                  Faturas
+                  Invoices
                 </a>
                 <a
                   href=""

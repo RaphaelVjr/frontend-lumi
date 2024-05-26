@@ -5,7 +5,7 @@ import '@testing-library/jest-dom';
 import Dashboard from '../pages/Dashboard';
 import React from 'react';
 
-const mockFaturas = [
+const mockInvoices = [
   {
     "id": 1,
     "numero_cliente": "7005400387",
@@ -21,7 +21,7 @@ const mockFaturas = [
 ];
 
 vi.mock('axios', () => ({
-  get: vi.fn(() => Promise.resolve({ data: mockFaturas }))
+  get: vi.fn(() => Promise.resolve({ data: mockInvoices }))
 }));
 
 describe('Dashboard', () => {
