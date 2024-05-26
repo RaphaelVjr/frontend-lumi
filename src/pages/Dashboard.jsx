@@ -36,6 +36,21 @@ const Dashboard = () => {
     fetchInvoices()
   }, [])
 
+  const monthMapping = {
+    "JAN": 1,
+    "FEV": 2,
+    "MAR": 3,
+    "ABR": 4,
+    "MAI": 5,
+    "JUN": 6,
+    "JUL": 7,
+    "AGO": 8,
+    "SET": 9,
+    "OUT": 10,
+    "NOV": 11,
+    "DEZ": 12
+  };
+
   useEffect(() => {
     const filteredInvoices = selectedNumeroCliente
       ? Invoices.filter(
@@ -45,21 +60,28 @@ const Dashboard = () => {
     processChartData(filteredInvoices)
   }, [selectedNumeroCliente, Invoices])
 
-  const processChartData = invoices => {
+  const processChartData = Invoices => {
     if (!selectedNumeroCliente) {
       setEnergyData([{ name: "", Consumo: null, "Energia Compensada": null }])
       setMonetaryData([{ name: "", "Total sem GD": null, "Economia GD": null }])
       return
     }
 
-    const energyChartData = Invoices.map(invoice => ({
+    const energyChartData = Invoices
+    .map(invoice => ({
       name: invoice.mes_referencia,
       Consumo:
         invoice.energia_eletrica_quantidade + invoice.energia_scee_quantidade,
       "Energia Compensada": invoice.energia_compensada_quantidade
     }))
+    .sort((a, b) => {
+      const [monthA, yearA] = a.name.split('/');
+      const [monthB, yearB] = b.name.split('/');
+      return yearA - yearB || monthMapping[monthA] - monthMapping[monthB];
+    });
 
-    const monetaryChartData = invoices.map(invoice => ({
+  const monetaryChartData = Invoices
+    .map(invoice => ({
       name: invoice.mes_referencia,
       "Total sem GD": (
         invoice.energia_eletrica_valor +
@@ -68,9 +90,14 @@ const Dashboard = () => {
       ).toFixed(2),
       "Economia GD": invoice.energia_compensada_valor
     }))
+    .sort((a, b) => {
+      const [monthA, yearA] = a.name.split('/');
+      const [monthB, yearB] = b.name.split('/');
+      return yearA - yearB || monthMapping[monthA] - monthMapping[monthB];
+    });
 
-    setEnergyData(energyChartData)
-    setMonetaryData(monetaryChartData)
+  setEnergyData(energyChartData);
+  setMonetaryData(monetaryChartData);
   }
 
   return (
@@ -96,8 +123,8 @@ const Dashboard = () => {
                 Consumo de Energia Elétrica (KWh)
               </h2>
               <LineChart
-                width={600}
-                height={300}
+                width={800}
+                height={500}
                 data={energyData}
                 data-testid="chart-data"
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
@@ -123,17 +150,17 @@ const Dashboard = () => {
             <div className="flex flex-col gap-3 text-center w-full items-center">
               <h2 className="text-xl font-bold">Valores Monetários (R$)</h2>
               <LineChart
-                width={600}
-                height={300}
+                width={800}
+                height={500}
                 data={monetaryData}
                 data-testid="chart-data"
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" fontSize={16} fontWeight={600} />
-                <YAxis fontSize={16} fontWeight={600} />
+                <YAxis fontSize={16} fontWeight={600} domain={[-1000, 2000]}/>
                 <Tooltip />
-                <Legend wrapperStyle={{ boxShadow: 'rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px', fontSize: '16px', margin: '0 0 0 32px', backgroundColor: '#FDFDFD', border: '1px solid #d5d5d5', borderRadius: 3, lineHeight: '40px' }}/>
+                <Legend wrapperStyle={{ boxShadow: 'rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px', fontSize: '16px', margin: '0 0 0 32px', backgroundColor: '#FDFDFD', border: '1px solid #d5d5d5', borderRadius: 3, lineHeight: '40px' }} />
                 <Line
                   type="monotone"
                   dataKey="Total sem GD"

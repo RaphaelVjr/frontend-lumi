@@ -8,6 +8,7 @@ import {
 import Dashboard from "./pages/Dashboard";
 import Library from "./pages/Library";
 import Header from './components/Header';
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/library" element={<Library />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
