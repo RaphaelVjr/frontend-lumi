@@ -8,14 +8,12 @@ import {
 import Dashboard from "./pages/Dashboard";
 import Library from "./pages/Library";
 import Header from './components/Header';
-import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
       <div>
         <Header />
-        <Footer />
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/library" element={<Library />} />
