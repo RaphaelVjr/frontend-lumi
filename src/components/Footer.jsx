@@ -15,7 +15,7 @@ export default function Footer() {
                         <a className="flex items-center justify-center font-medium text-gray-900 title-font md:justify-start">
                             <img className="h-14 w-auto" src={lumi} alt="" />
                         </a>
-                        <p className="mt-2 text-sm text-gray-500">Impulsionamos os seus negócios, gerenciando a sua energia</p>
+                        <p className="mt-2 text-sm text-gray-500">We boost your business by managing your energy.</p>
                         <div className="mt-4">
                             <span className="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                                 <a className="text-gray-500 cursor-pointer hover:text-gray-700">
@@ -105,7 +105,7 @@ export default function Footer() {
                                     <a className="text-gray-500 cursor-pointer hover:text-gray-900">Request a Quote</a>
                                 </li>
                                 <li className="mt-3">
-                                    <a className="text-gray-500 cursor-pointer hover:text-gray-900">+123-456-7890</a>
+                                    <a className="text-gray-500 cursor-pointer hover:text-gray-900">+55 66 9999-8888</a>
                                 </li>
                             </nav>
                         </div>
@@ -113,7 +113,7 @@ export default function Footer() {
                 </div>
                 <div className="bg-gray-300">
                     <div className="container px-5 py-4 mx-auto">
-                        <p className="text-sm text-gray-700 capitalize xl:text-center">© 2020 All rights reserved </p>
+                        <p className="text-sm text-gray-700 capitalize xl:text-center">© 2024 All rights reserved </p>
                     </div>
                 </div>
             </footer>
