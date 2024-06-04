@@ -53,7 +53,7 @@ const Library = () => {
       render: (_, record) => (
         <motion.a
           className="bg-[#0dad62] text-[#12312a] rounded p-2 hover:text-white justify-center align-middle"
-          href={`${baseUrl}/invoices/download/${record.id}`}
+          href={`https://backend-lumi.vercel.app/invoices/download/${record.id}`}
           download
         >
           Download
