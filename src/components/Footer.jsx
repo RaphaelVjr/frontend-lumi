@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import lumi from '../assets/lumi-logo.png'
+import lumi from '../assets/re-energy.png'
 
 
 

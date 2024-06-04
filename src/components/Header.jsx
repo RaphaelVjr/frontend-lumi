@@ -5,7 +5,7 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import lumi from '../assets/lumi-logo.png'
+import lumi from '../assets/re-energy.png'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
